@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --pokeball-red: #cc0000;
+    --pokeball-white: #f7f7f7;
+    --pokeball-black: #111111;
+    --card-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+body{
+    min-height: 100vh;
+    background: linear-gradient(180deg, #f2f2f2 0%, #e1e1e1 100%);
+    font-family: 'Press Start 2P', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 20px 60px;
+    position: relative;
+    overflow: auto;
+    color: var(--pokeball-black);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body::before,
+body::after {
+    display: none;
+}
+header {
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--pokeball-black);
+    padding: 24px 30px;
+    text-align: center;
+    border-radius: 24px;
+    box-shadow: var(--card-shadow);
+    z-index: 1;
+    width: min(760px, 100%);
+}
+h1{
+    margin-bottom: 8px;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+p {
+    margin-top: 6px;
+    color: #444;
+}
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin: 24px 0;
+    z-index: 1;
+}
+input {
+    padding: 14px 16px;
+    width: 220px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 999px;
+    text-align: center;
+    outline: none;
+    font-size: 1rem;
+    z-index: 1;
+}
+button {
+    padding: 14px 24px;
+    background-color: var(--pokeball-black);
+    color: var(--pokeball-white);
+    border: 2px solid var(--pokeball-black);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    z-index: 1;
+}
+button:hover {
+    background-color: #333;
+    transform: translateY(-1px);
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    width: min(1000px, 100%);
+    z-index: 1;
+}
+li {
+    background: linear-gradient(180deg, rgba(204, 0, 0, 0.85) 0%, rgba(204, 0, 0, 0.85) 52%, rgba(255, 255, 255, 0.80) 52%, rgba(255, 255, 255, 0.80) 100%);
+    border: 2px solid rgba(0, 0, 0, 0.18);
+    border-radius: 24px;
+    padding: 24px 20px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    min-height: 340px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+li:nth-child(even) {
+    background: linear-gradient(180deg, rgba(204, 0, 0, 0.85) 0%, rgba(204, 0, 0, 0.85) 52%, rgba(255, 255, 255, 0.80) 52%, rgba(255, 255, 255, 0.80) 100%);
+}
+li img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+li h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--pokeball-black);
+    text-transform: capitalize;
+}
+li p {
+    margin: 0;
+    color: #444;
+}
+#error {
+    color: #ff4444;
+    margin-top: 14px;
+    font-weight: 600;
+    z-index: 1;
+}
+@media (max-width: 520px) {
+    body {
+        padding: 20px 12px 40px;
+    }
+    input {
+        width: 100%;
+    }
+    button {
+        width: 100%;
+    }
+}
+
